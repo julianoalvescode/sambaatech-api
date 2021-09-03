@@ -10,7 +10,7 @@ app.get("/medias/:mediaId", async (req: Request, res: Response) => {
 	const { mediaId } = req.params;
 
 	await axios
-		.get(`http://api.sambavideos.sambatech.com/v1/medias/${mediaId}`, {
+		.get(process.env.API_SAMBATECH_HOST + `/medias/${mediaId}`, {
 			params: {
 				access_token: process.env.ACESS_TOKEN,
 				pid: process.env.PID_CODE,
