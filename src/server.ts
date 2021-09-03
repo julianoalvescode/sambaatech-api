@@ -24,6 +24,6 @@ app.get("/medias/:mediaId", async (req: Request, res: Response) => {
 		});
 });
 
-app.listen(process.env.PORT | 3333, () => {
+app.listen(process.env.PORT || 3333, () => {
 	console.log(`API is running`);
 });
