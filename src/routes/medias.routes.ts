@@ -1,10 +1,11 @@
 import { Router } from 'express';
 
 import { http } from './../controllers/http';
+import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
 const mediasRoutes = Router();
 
-mediasRoutes.get('/medias/:mediaId', async (req, res) => {
+mediasRoutes.get('/medias/:mediaId', ensureAuthenticated, async (req, res) => {
 	const { mediaId } = req.params;
 
 	await http
